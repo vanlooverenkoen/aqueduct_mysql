@@ -178,7 +178,7 @@ print(commands);
   }
 
   List<String> _addConstraintsForColumn(String tableName, SchemaColumn column) {
-    final columnName = ${_columnNameForColumn(column)};
+    final columnName = _columnNameForColumn(column);
     return [
       "ALTER TABLE  $tableName ADD FOREIGN KEY fk_$columnName($columnName) "
           "REFERENCES ${column.relatedTableName} (${column.relatedColumnName}) "
